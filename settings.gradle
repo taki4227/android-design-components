@@ -1,0 +1,2 @@
+rootProject.name='android-design-components'
+include ':app'

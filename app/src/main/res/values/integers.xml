@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="gradient_angle_from_left_to_right">0</integer>
+    <integer name="gradient_angle_from_bottom_to_top">90</integer>
+    <integer name="gradient_angle_from_right_to_left">180</integer>
+    <integer name="gradient_angle_from_top_to_bottom">270</integer>
+</resources>

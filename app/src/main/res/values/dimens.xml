@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ボタンの高さは40dpとなっているが、button inset 6dp + padding 2dp分を追加 -->
+    <dimen name="sign_in_with_google_button_height">54dp</dimen>
+</resources>

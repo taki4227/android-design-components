@@ -3,4 +3,6 @@
 
     <!-- ボタンの高さは40dpとなっているが、button inset 6dp + padding 2dp分を追加 -->
     <dimen name="sign_in_with_google_button_height">54dp</dimen>
+
+    <dimen name="menu_icon_size">48dp</dimen>
 </resources>

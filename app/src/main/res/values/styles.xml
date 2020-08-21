@@ -39,4 +39,14 @@
         <item name="iconTint">@null</item>
     </style>
 
+    <style name="Widget.App.Chip.Badge" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="chipBackgroundColor">@color/colorPrimary</item>
+        <item name="chipEndPadding">2dp</item>
+        <item name="chipStartPadding">0dp</item>
+        <item name="chipMinHeight">24dp</item>
+        <item name="ensureMinTouchTargetSize">false</item>
+    </style>
+
 </resources>

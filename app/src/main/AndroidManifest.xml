@@ -20,7 +20,8 @@
         <activity
             android:name="com.example.taki.android_design_components.LiveActivity"
             android:screenOrientation="behind"
-            android:theme="@style/Viewer" />
+            android:theme="@style/Viewer"
+            android:windowSoftInputMode="adjustNothing" />
 
     </application>
 

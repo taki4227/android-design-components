@@ -1,16 +1,13 @@
 package com.example.taki.android_design_components
 
-import android.animation.ArgbEvaluator
-import android.animation.ValueAnimator
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.taki.android_design_components.databinding.FragmentLiveBinding
-
 
 class LiveFragment : Fragment() {
 
@@ -20,12 +17,14 @@ class LiveFragment : Fragment() {
         KeyboardHeightCalculator(requireActivity())
     }
 
-    private var keyboardState = KeyboardState.COLLAPSED
+    private val liveViewModel by viewModels<LiveViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLiveBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = this
+        binding.viewModel = liveViewModel
         return binding.root
     }
 
@@ -37,36 +36,22 @@ class LiveFragment : Fragment() {
             override fun onKeyboardHeightChanged(keyboardHeight: Int) {
                 ConstraintSet().run {
                     clone(binding.container)
-                    setMargin(R.id.comment_container, ConstraintSet.BOTTOM, keyboardHeight)
+                    setMargin(binding.commentContainer.id, ConstraintSet.BOTTOM, keyboardHeight)
                     applyTo(binding.container)
                 }
             }
 
             override fun onKeyboardStateChanged(state: KeyboardState) {
-                if (keyboardState == state) return
-                keyboardState = state
+                liveViewModel.changeKeyboardState(state)
 
-                val colorAnimation: ValueAnimator
                 when (state) {
                     KeyboardState.COLLAPSED -> {
                         binding.commentField.clearFocus()
-                        colorAnimation =
-                            ValueAnimator.ofObject(ArgbEvaluator(), Color.LTGRAY, Color.TRANSPARENT)
                     }
                     KeyboardState.EXPANDED -> {
                         binding.commentField.requestFocus()
-                        colorAnimation =
-                            ValueAnimator.ofObject(ArgbEvaluator(), Color.TRANSPARENT, Color.LTGRAY)
                     }
                 }
-
-                colorAnimation.duration = 200
-                colorAnimation.addUpdateListener { animator ->
-                    binding.commentContainer.setBackgroundColor(
-                        animator.animatedValue as Int
-                    )
-                }
-                colorAnimation.start()
             }
         })
     }

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/fade_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="fade in"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+
+        <Button
+            android:id="@+id/fade_out_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="fade out"
+            app:layout_constraintBaseline_toBaselineOf="@id/fade_in_button"
+            app:layout_constraintStart_toEndOf="@id/fade_in_button" />
+
+        <Button
+            android:id="@+id/change_start_color_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="change start color"
+            app:layout_constraintStart_toStartOf="@id/fade_in_button"
+            app:layout_constraintTop_toBottomOf="@id/fade_in_button" />
+
+        <Button
+            android:id="@+id/change_end_color_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="change end color"
+            app:layout_constraintBaseline_toBaselineOf="@id/change_start_color_button"
+            app:layout_constraintStart_toEndOf="@id/change_start_color_button" />
+
+        <Button
+            android:id="@+id/expand_view_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="expand view"
+            app:layout_constraintStart_toStartOf="@id/change_start_color_button"
+            app:layout_constraintTop_toBottomOf="@id/change_start_color_button" />
+
+        <Button
+            android:id="@+id/collapse_view_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="collapse view"
+            app:layout_constraintBaseline_toBaselineOf="@id/expand_view_button"
+            app:layout_constraintStart_toEndOf="@id/expand_view_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

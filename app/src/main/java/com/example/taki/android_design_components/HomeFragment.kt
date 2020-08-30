@@ -5,6 +5,7 @@ import android.view.*
 import android.widget.ImageView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.taki.android_design_components.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -21,7 +22,6 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -31,6 +31,10 @@ class HomeFragment : Fragment() {
 
         binding.liveButton.setOnClickListener {
             LiveActivity.start(requireActivity())
+        }
+
+        binding.animationButton.setOnClickListener {
+            findNavController().navigate(R.id.navigate_to_animation)
         }
     }
 

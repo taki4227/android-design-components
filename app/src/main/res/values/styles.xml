@@ -30,6 +30,53 @@
         <item name="iconTint">@null</item>
     </style>
 
+    <style name="Widget.Smash.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.TextInputLayout.SingleLine</item>
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <item name="boxStrokeColor">@android:color/transparent</item>
+        <item name="hintEnabled">false</item>
+<!--        <item name="prefixTextColor">?android:textColorSecondary</item>-->
+<!--        <item name="suffixTextColor">?android:textColorSecondary</item>-->
+<!--        <item name="startIconTint">?android:textColorSecondary</item>-->
+<!--        <item name="endIconTint">?android:textColorSecondary</item>-->
+<!--        <item name="counterTextAppearance">?attr/textAppearanceCaption</item>-->
+<!--        <item name="counterTextColor">?android:textColorSecondary</item>-->
+<!--        <item name="errorIconDrawable">@null</item>-->
+    </style>
+
+    <style name="Widget.Smash.TextInputLayout.MultiLine">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout.MultiLine</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.App.TextInputLayout.MultiLine
+        </item>
+    </style>
+
+    <style name="Widget.Smash.TextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+<!--        <item name="android:textAppearance">?attr/textAppearanceSubtitle2</item>-->
+<!--        <item name="android:textColorHint">?android:textColorSecondary</item>-->
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <style name="Widget.Smash.TextInputEditText.MultiLine">
+        <item name="android:gravity">top</item>
+        <item name="android:inputType">textCapSentences|textMultiLine</item>
+    </style>
+
+    <style name="Widget.App.Button.IconButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:minWidth">@dimen/icon_button_min_width</item>
+        <item name="android:minHeight">@dimen/icon_button_min_width</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingTop">@dimen/icon_button_padding</item>
+        <item name="android:paddingBottom">@dimen/icon_button_padding</item>
+        <item name="android:paddingEnd">@dimen/icon_button_padding</item>
+        <item name="android:paddingStart">@dimen/icon_button_padding</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.Button</item>
+    </style>
+
     <style name="Widget.App.Chip.Badge" parent="Widget.MaterialComponents.Chip.Action">
         <item name="android:focusable">false</item>
         <item name="android:clickable">false</item>

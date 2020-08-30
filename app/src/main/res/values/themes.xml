@@ -22,4 +22,12 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="ThemeOverlay.App.TextInputLayout" parent="">
+        <item name="editTextStyle">@style/Widget.Smash.TextInputEditText</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextInputLayout.MultiLine">
+        <item name="editTextStyle">@style/Widget.Smash.TextInputEditText.MultiLine</item>
+    </style>
+
 </resources>

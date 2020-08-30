@@ -5,4 +5,9 @@
     <dimen name="sign_in_with_google_button_height">54dp</dimen>
 
     <dimen name="menu_icon_size">48dp</dimen>
+
+    <dimen name="icon_button_min_width">48dp</dimen>
+    <dimen name="icon_button_padding">10dp</dimen>
+    <dimen name="icon_button_min_width_small">32dp</dimen>
+    <dimen name="icon_button_padding_small">6dp</dimen>
 </resources>

@@ -6,9 +6,11 @@ import android.graphics.Rect
 import android.view.*
 import android.widget.PopupWindow
 
-typealias KeyboardHeightChangedListener = (keyboardHeight: Int) -> Unit
-
 class KeyboardHeightCalculator(private val activity: Activity) : PopupWindow() {
+    interface KeyboardEventListener {
+        fun onKeyboardHeightChanged(keyboardHeight: Int)
+        fun onKeyboardStateChanged(state: KeyboardState)
+    }
 
     private val measurementView: View by lazy {
         LayoutInflater.from(activity).inflate(R.layout.view_mesurement, null, false)
@@ -17,7 +19,7 @@ class KeyboardHeightCalculator(private val activity: Activity) : PopupWindow() {
         activity.findViewById(android.R.id.content)
     }
 
-    private var listener: KeyboardHeightChangedListener? = null
+    private var listener: KeyboardEventListener? = null
 
     private val globalLayoutListener = ViewTreeObserver.OnGlobalLayoutListener {
         calcHeight()
@@ -33,7 +35,7 @@ class KeyboardHeightCalculator(private val activity: Activity) : PopupWindow() {
         measurementView.viewTreeObserver.addOnGlobalLayoutListener(globalLayoutListener)
     }
 
-    fun setKeyboardHeightChangedListener(listener: KeyboardHeightChangedListener) {
+    fun setKeyboardEventListener(listener: KeyboardEventListener) {
         this.listener = listener
     }
 
@@ -57,7 +59,12 @@ class KeyboardHeightCalculator(private val activity: Activity) : PopupWindow() {
         activity.windowManager.defaultDisplay.getSize(point)
         val rect = Rect()
         measurementView.getWindowVisibleDisplayFrame(rect)
-        listener?.invoke(point.y - rect.bottom)
+
+        val keyboardHeight = point.y - rect.bottom
+        val state = if (keyboardHeight > 0) KeyboardState.EXPANDED else KeyboardState.COLLAPSED
+
+        listener?.onKeyboardHeightChanged(keyboardHeight)
+        listener?.onKeyboardStateChanged(state)
     }
 
 }

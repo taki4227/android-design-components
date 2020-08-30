@@ -1,12 +1,14 @@
 package com.example.taki.android_design_components
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.taki.android_design_components.databinding.ActivityMainBinding
+import com.example.taki.android_design_components.widget.AppBarState
+import com.example.taki.android_design_components.widget.AppBarStateChangedListener
 import com.google.android.material.appbar.AppBarLayout
 
 class MainActivity : AppCompatActivity() {

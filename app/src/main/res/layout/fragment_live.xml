@@ -6,7 +6,7 @@
 
         <import type="android.view.View" />
 
-        <import type="com.example.taki.android_design_components.KeyboardState" />
+        <import type="com.example.taki.android_design_components.widget.KeyboardState" />
 
         <variable
             name="viewModel"

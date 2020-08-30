@@ -1,10 +1,11 @@
-package com.example.taki.android_design_components
+package com.example.taki.android_design_components.widget
 
 import android.app.Activity
 import android.graphics.Point
 import android.graphics.Rect
 import android.view.*
 import android.widget.PopupWindow
+import com.example.taki.android_design_components.R
 
 class KeyboardHeightCalculator(private val activity: Activity) : PopupWindow() {
     interface KeyboardEventListener {

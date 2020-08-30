@@ -1,4 +1,4 @@
-package com.example.taki.android_design_components
+package com.example.taki.android_design_components.widget
 
 import com.google.android.material.appbar.AppBarLayout
 import kotlin.math.abs
